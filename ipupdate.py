@@ -11,7 +11,7 @@ parameters["password"] = "password"			# use your own password here
 
 try:
 	request = urllib2.Request(parameters["baseurl"]+parameters["hostname"])
-	request.add_header('Authorization', 'Basic' + b64encode(parameters["id"] + ':' + parameters["password"]))
+	request.add_header('Authorization', 'Basic ' + b64encode(parameters["id"] + ':' + parameters["password"]))
 	r = urllib2.urlopen(request)
 except urllib2.HTTPError as e:
 	print e
